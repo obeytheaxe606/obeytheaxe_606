@@ -1,0 +1,52 @@
+<img class="drip" src="blood.gif"/>
+
+<div class="background">
+  <div class="main">
+    <div class="main-content">
+      <div class="top">
+        <div class="profile-picture">
+          <img src="profile.jpg" alt="Profile picture" />
+        
+           <img
+            class="audio-toggle"
+            [src]="isPlaying ? 'pause.png' : 'play.png'"
+            (click)="toggleAudio()"
+            alt="Toggle audio"
+          />
+        </div>
+      
+        <h1 class="name">obeytheaxe_606</h1>
+      </div>
+      
+      <p><em>huff</em> ... <em>huff</em> ...</p>
+      <p>Hey! I'm Oliver! I'm 18 and I use he/him pronouns! I'm a programmer and music artist! My favorite things are; seals,
+         metal (the music), horrorcore rap (and normal rap), Cinnamoroll, Br0ken Colors, MonsterxMediator, and a bunch of different animes!</p>
+      <p><em>click the profile picture for some music (You're My Stump - MC Bushpig)</em></p>
+      
+      <button class="socials-show" (click)="showSocials()">Socials</button>
+    </div>
+  </div>
+</div>
+
+<img class="mini" src="mini.png"/>
+
+@if (areSocialsVisible)
+{
+  <div class="socials" id="socials">
+    <button class="socials-hide" (click)="hideSocials()">X</button>
+    <div class="socials-links">
+      <a href="https://discord.gg/pgjTuUFj9A" class="socials-link">Discord</a>
+      <a href="comingsoon"class="socials-link">Spacehey</a>
+    </div>
+  </div>
+}
+
+
+<audio
+  #audio
+  src="ymstump.mp3"
+  loop
+  preload="auto"
+  (play)="isPlaying = true"
+  (pause)="isPlaying = false"
+></audio>
